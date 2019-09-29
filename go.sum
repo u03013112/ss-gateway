@@ -19,6 +19,8 @@ github.com/u03013112/ss-pb v1.0.5 h1:Fit5IC48zXIgCb7h3VT6+btH9iWGeKA1aPHCyNIdmIA
 github.com/u03013112/ss-pb v1.0.5/go.mod h1:8ReIldw0GwQYZe914ll4kOz4cjz8HCUqUMjlRheRXrA=
 github.com/u03013112/ss-pb v1.0.6 h1:Ga7tKHi+b8spOsYqwdXwwP5e3nsr5NZ+oXa4MV6Spdw=
 github.com/u03013112/ss-pb v1.0.6/go.mod h1:8ReIldw0GwQYZe914ll4kOz4cjz8HCUqUMjlRheRXrA=
+github.com/u03013112/ss-pb v1.0.7 h1:QgX/f4XVI3cPSH1CPxd/XfzFVADsVKd1xXY6v1QtczQ=
+github.com/u03013112/ss-pb v1.0.7/go.mod h1:8ReIldw0GwQYZe914ll4kOz4cjz8HCUqUMjlRheRXrA=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/lint v0.0.0-20181026193005-c67002cb31c3/go.mod h1:UVdnD1Gm6xHRNCYTkRU2/jEulfH38KcIWyp/GAMgvoE=
 golang.org/x/lint v0.0.0-20190313153728-d0100b6bd8b3/go.mod h1:6SW0HCj/g11FgYtHlgUYUwCkIfeOF89ocIRzGO/8vkc=
