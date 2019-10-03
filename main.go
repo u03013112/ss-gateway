@@ -11,12 +11,14 @@ import (
 	"google.golang.org/grpc"
 
 	config "github.com/u03013112/ss-pb/config"
+	user "github.com/u03013112/ss-pb/user"
 )
 
 var (
 	// command-line options:
 	// gRPC server endpoint
-	grpcServerEndpoint = flag.String("grpc-server-endpoint", "config:50001", "gRPC server endpoint")
+	grpcServerEndpointConfig = flag.String("grpc-server-endpoint-config", "config:50001", "gRPC server endpoint")
+	grpcServerEndpointUser   = flag.String("grpc-server-endpoint-user", "user:50000", "gRPC server endpoint")
 )
 
 func run() error {
@@ -28,7 +30,12 @@ func run() error {
 	// Note: Make sure the gRPC server is running properly and accessible
 	mux := runtime.NewServeMux()
 	opts := []grpc.DialOption{grpc.WithInsecure()}
-	err := config.RegisterSSConfigHandlerFromEndpoint(ctx, mux, *grpcServerEndpoint, opts)
+	err := config.RegisterSSConfigHandlerFromEndpoint(ctx, mux, *grpcServerEndpointConfig, opts)
+	if err != nil {
+		log.Println(err.Error())
+		return err
+	}
+	err = user.RegisterSSUserHandlerFromEndpoint(ctx, mux, *grpcServerEndpointUser, opts)
 	if err != nil {
 		log.Println(err.Error())
 		return err
