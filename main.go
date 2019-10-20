@@ -20,7 +20,7 @@ var (
 	// gRPC server endpoint
 	grpcServerEndpointConfig = flag.String("grpc-server-endpoint-config", "config:50001", "gRPC server endpoint")
 	grpcServerEndpointUser   = flag.String("grpc-server-endpoint-user", "user:50000", "gRPC server endpoint")
-	grpcServerEndpointIOS    = flag.String("grpc-server-endpoint-ios", "ios-purchase:50002", "gRPC server endpoint")
+	grpcServerEndpointIOS    = flag.String("grpc-server-endpoint-ios", "ios:50002", "gRPC server endpoint")
 )
 
 func run() error {
