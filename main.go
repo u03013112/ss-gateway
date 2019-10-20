@@ -11,6 +11,7 @@ import (
 	"google.golang.org/grpc"
 
 	config "github.com/u03013112/ss-pb/config"
+	ios "github.com/u03013112/ss-pb/ios"
 	user "github.com/u03013112/ss-pb/user"
 )
 
@@ -19,6 +20,7 @@ var (
 	// gRPC server endpoint
 	grpcServerEndpointConfig = flag.String("grpc-server-endpoint-config", "config:50001", "gRPC server endpoint")
 	grpcServerEndpointUser   = flag.String("grpc-server-endpoint-user", "user:50000", "gRPC server endpoint")
+	grpcServerEndpointIOS    = flag.String("grpc-server-endpoint-ios", "ios-purchase:50002", "gRPC server endpoint")
 )
 
 func run() error {
@@ -36,6 +38,11 @@ func run() error {
 		return err
 	}
 	err = user.RegisterSSUserHandlerFromEndpoint(ctx, mux, *grpcServerEndpointUser, opts)
+	if err != nil {
+		log.Println(err.Error())
+		return err
+	}
+	err = ios.RegisterIOSHandlerFromEndpoint(ctx, mux, *grpcServerEndpointIOS, opts)
 	if err != nil {
 		log.Println(err.Error())
 		return err
