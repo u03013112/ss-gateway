@@ -1,0 +1,54 @@
+syntax = "proto3";
+package ios;
+option go_package = "github.com/u03013112/ss-pb/ios";
+
+import "google/api/annotations.proto";
+
+service IOS {
+    rpc Login (LoginRequest) returns (LoginReply){
+        option (google.api.http) = {
+            post: "/v1/ios/login"
+            body: "*"
+        };
+    }
+    rpc Purchase (PurchaseRequest) returns (PurchaseReply){
+        option (google.api.http) = {
+            post: "/v1/ios/purchase"
+            body: "*"
+        };
+    }
+    rpc GetConfig (GetConfigRequest) returns (GetConfigReply){
+        option (google.api.http) = {
+            post: "/v1/ios/config"
+            body: "*"
+        };
+    }
+}
+
+message LoginRequest {
+    string uuid = 1;
+}
+
+message LoginReply {
+    string token = 1;
+    int64 expiresDate = 2;
+}
+
+message PurchaseRequest {
+    string token = 1;
+    string data = 2;
+}
+message PurchaseReply {
+    int64 expiresDate = 1;
+}
+
+message GetConfigRequest {
+    string token = 1;
+}
+message GetConfigReply {
+    string IP = 1;
+    string port = 2;
+    string method = 3;
+    string passwd = 4;
+    int64 expiresDate = 5;
+}
