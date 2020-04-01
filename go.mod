@@ -7,7 +7,7 @@ require (
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/grpc-ecosystem/grpc-gateway v1.12.1
 	github.com/micro/go-micro v1.18.0 // indirect
-	github.com/u03013112/ss-pb v1.0.33
+	github.com/u03013112/ss-pb v1.0.35
 	google.golang.org/grpc v1.25.1
 	gopkg.in/resty.v1 v1.12.0 // indirect
 )
