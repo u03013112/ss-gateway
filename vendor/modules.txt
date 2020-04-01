@@ -15,7 +15,7 @@ github.com/golang/protobuf/ptypes
 github.com/grpc-ecosystem/grpc-gateway/runtime
 github.com/grpc-ecosystem/grpc-gateway/internal
 github.com/grpc-ecosystem/grpc-gateway/utilities
-# github.com/u03013112/ss-pb v1.0.35
+# github.com/u03013112/ss-pb v1.0.38
 github.com/u03013112/ss-pb/android
 github.com/u03013112/ss-pb/config
 github.com/u03013112/ss-pb/ios
