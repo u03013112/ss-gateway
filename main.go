@@ -13,6 +13,7 @@ import (
 	android "github.com/u03013112/ss-pb/android"
 	config "github.com/u03013112/ss-pb/config"
 	ios "github.com/u03013112/ss-pb/ios"
+	tester "github.com/u03013112/ss-pb/tester"
 	user "github.com/u03013112/ss-pb/user"
 )
 
@@ -23,6 +24,7 @@ var (
 	grpcServerEndpointUser    = flag.String("grpc-server-endpoint-user", "user:50000", "gRPC server endpoint")
 	grpcServerEndpointIOS     = flag.String("grpc-server-endpoint-ios", "ios:50002", "gRPC server endpoint")
 	grpcServerEndpointAndroid = flag.String("grpc-server-endpoint-android", "android:50003", "gRPC server endpoint")
+	grpcServerEndpointTester  = flag.String("grpc-server-endpoint-tester", "android:50004", "gRPC server endpoint")
 )
 
 func run() error {
@@ -50,6 +52,11 @@ func run() error {
 		return err
 	}
 	err = android.RegisterAndroidHandlerFromEndpoint(ctx, mux, *grpcServerEndpointAndroid, opts)
+	if err != nil {
+		log.Println(err.Error())
+		return err
+	}
+	err = tester.RegisterSSTesterHandlerFromEndpoint(ctx, mux, *grpcServerEndpointTester, opts)
 	if err != nil {
 		log.Println(err.Error())
 		return err
